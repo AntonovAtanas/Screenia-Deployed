@@ -1,0 +1,115 @@
+.u-clearfix:before,
+.u-clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.u-clearfix:after {
+    clear: both;
+}
+
+.subtle {
+    color: #aaa;
+}
+
+.card-container {
+    margin: 25px auto 0;
+    position: relative;
+    width: 900px;
+    background-color: #1a1a1a;
+}
+
+.card {
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 5px rgba(75, 75, 75, .07);
+    z-index: 1;
+}
+
+.card-body {
+    display: inline-block;
+    width: 65%;
+    padding-left: 30px;
+}
+
+.card-top-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-wrapper {
+    display: flex;
+}
+
+.movie-rating {
+    color: white;
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+.card-likes {
+    display: flex;
+}
+
+.movie-likes {
+    color: white;
+    margin: 4px 4px 0 8px;
+}
+
+.stats-icon {
+    height: 28px;
+    width: 28px;
+}
+
+.movie-year {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.card-number {
+    margin-top: 15px;
+}
+
+.card-director {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .5px;
+    margin: 15px 0 0;
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 10px 0;
+    color: white;
+}
+
+.card-description {
+    display: inline-block;
+    font-weight: 300;
+    margin: 10px 0 70px;
+    font-size: 14px;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.card-tag {
+    float: right;
+    margin: 5px 0 0;
+}
+
+.card-media {
+    float: left;
+    height: 400px;
+}
+
+a {
+    text-decoration: none;
+}

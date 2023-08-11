@@ -1,0 +1,35 @@
+<p class="hero-top-movie">Add comment</p>
+        <div class="container">
+            <form class="row input-container" #commentForm="ngForm" (submit)="onComment(commentForm)">
+                    <div class="col-xs-12">
+                        <div class="styled-input wide">
+                            <label for="comment">Comment</label>
+                            <textarea id="comment" name="comment"
+                            ngModel
+                            #comment="ngModel"
+                            required
+                            minlength="15"
+                            maxlength="200"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- review content validation -->
+
+                    <ng-container *ngIf="comment.touched">
+                        <p id="validation-error" *ngIf="comment.errors?.['required']">
+                        Comment content is required!
+                        </p>
+                        <p id="validation-error" *ngIf="comment.errors?.['minlength']">
+                        Comment content must be at least 15 characters!
+                        </p>
+                        <p id="validation-error" *ngIf="comment.errors?.['maxlength']">
+                        Comment content must be no more than 200 characters!
+                        </p>
+                    </ng-container>
+
+                    <div class="col-xs-12">
+                        <button class="btn-main" type="submit" [disabled]="commentForm.invalid">Add Comment</button>
+                    </div>
+            </form>
+        </div>

@@ -1,0 +1,16 @@
+<div class="title-wrapper">
+    <h3 class="title-section">Search Results</h3>
+</div>
+
+<ng-container *ngIf="!isLoading">
+    <div class="grid-top-rated-movies" *ngIf="searchResults.length > 0">
+        <app-movie-card *ngFor="let movie of searchResults" [movie]="movie"></app-movie-card>
+    </div>
+    <p class="text-center" *ngIf="searchResults.length == 0">No results found</p>
+</ng-container>
+
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+<ng-container *ngIf="error">
+    <p>{{error}}</p>
+</ng-container>

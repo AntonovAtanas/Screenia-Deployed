@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="timeline">
+        <div class="timeline__group">
+            <div class="timeline__cards" >
+                <div class="timeline__card card" *ngFor="let post of allPosts">
+                    <a [routerLink]="['/forum', 'post', post._id]" class="post-link">
+                        <header class="card__header">
+                            <span class="post-username">by {{post._ownerId.username}} {{post.createdAt | dateAgo}}</span>
+                            <h3 class="card__title r-title">{{post.title}}</h3>
+                        </header>
+                        <div class="description-container">
+                            <p>{{post.description}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

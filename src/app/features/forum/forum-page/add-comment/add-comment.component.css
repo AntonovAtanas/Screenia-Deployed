@@ -1,0 +1,91 @@
+.container {
+    margin-bottom: 42px;
+}
+
+.hero-top-movie {
+    text-align: center;
+    margin: 26px 0 26px 0;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding-bottom: 8px;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+select,
+textarea {
+    margin-top: 6px;
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 6em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 0 auto 0 auto;
+}
+
+.btn-main {
+    float: right;
+}
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+    }
+}
+
+/* errors  */
+
+#validation-error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: #D87D4A;
+    padding-top: 0;
+}
+
+textarea.ng-invalid.ng-touched {
+    border-left: 5px solid #D87D4A;
+}

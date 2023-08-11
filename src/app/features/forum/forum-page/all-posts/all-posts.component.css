@@ -1,0 +1,72 @@
+
+  .post-username {
+    padding: 4px 0 4px 0;
+    font-size: 10px;
+    text-decoration: none;
+    color: #c4c4c4;
+  }
+  
+  .card {
+    padding: 12px 22px;
+    border-radius: 2px;
+    border-left: 3px solid #D87D4A;
+    background-color: #1a1a1a;
+    width: 780px;
+  }
+  
+  .card__title{
+    color: white;
+    font-size: 22px;
+    margin: 12px 0 12px 0;
+  }
+  
+  .timeline{
+    display: var(--timelineDisplay, grid);
+    grid-row-gap: var(--timelineGroupsGap, 2rem);
+  }
+
+  .description-container {
+    color: #c4c4c4;
+    font-size: 14px;
+  }
+
+  .post-link {
+    text-decoration: none;
+  }
+
+  .post-link:hover .card__title{
+    color: #D87D4A;
+  }
+  
+  .timeline__cards{
+    display: var(--timeloneCardsDisplay, grid);
+    grid-row-gap: var(--timeloneCardsGap, 1.5rem);
+  }
+  
+  .timeline__card{
+    position: relative;
+    margin-left: var(--timelineCardLineGap, 1rem);
+  }
+  
+  .timeline__cards{
+    overflow: hidden;
+    padding-top: .25rem; 
+    padding-bottom: .25rem;
+  }
+  
+  p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  p:last-child{
+    margin-bottom: 0;
+  }
+  
+  .container{
+    max-width: 67rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 42px;
+  }

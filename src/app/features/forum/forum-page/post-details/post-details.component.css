@@ -1,0 +1,56 @@
+.blog-container {
+    background: #1a1a1a;
+    border-radius: 5px;
+    margin: 42px auto;
+    width: 800px;
+    padding: 30px;
+    
+    @media screen and (min-width: 480px) {
+        width: 28rem;
+    }
+
+    @media screen and (min-width: 767px) {
+        width: 40rem;
+    }
+
+    @media screen and (min-width: 959px) {
+        width: 50rem;
+    }
+}
+
+.hero-top-movie {
+    text-align: center;
+    margin: 26px 0 26px 0;
+}
+
+.blog-title {
+    color: white;
+}
+
+.blog-author,
+.blog-author--no-cover {
+    padding-top: .125rem;
+    width: 80%;
+}
+
+.blog-summary {
+    color: #aaa;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.blog-author--no-cover h3 {
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.blog-body {
+    width: 80%;
+}
+
+.published-date {
+    border: 1px solid lighten(#333, 40%);
+    border-radius: 3px;
+    padding: 0 .5rem;
+}

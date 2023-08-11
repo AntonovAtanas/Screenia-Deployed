@@ -1,0 +1,56 @@
+<div class="container form-wrapper">
+    <form class="post-form" #addPost="ngForm" (submit)="onCreate(addPost)">
+        <h3>Add Post</h3>
+        
+        <!-- Add post title -->
+        <label for="title">Post Title</label>
+        <input type="text" placeholder="Title..." id="title" name="title"
+        required
+        #title="ngModel"
+        ngModel
+        minlength="4"
+        maxlength="60"
+        >
+        <!-- title validation errors -->
+        <ng-container *ngIf="title.touched">
+            <p id="validation-error" *ngIf="title.errors?.['required']">
+                Post title is required!
+            </p>
+            <p id="validation-error" *ngIf="title.errors?.['minlength']">
+                Post title is less than 4 characters!
+            </p>
+            <p id="validation-error" *ngIf="title.errors?.['maxlength']">
+                Post title should not exceed 60 characters!
+            </p>
+        </ng-container>
+
+        <!-- Add Post description -->
+        <label for="description">Description</label>
+        <textarea placeholder="Description..." id="description" name="description"
+        #description="ngModel"
+        ngModel
+        required
+        minlength="20"
+        maxlength="200"
+        ></textarea>
+        <!-- description validation -->
+        <ng-container *ngIf="description.touched">
+            <p id="validation-error" *ngIf="description.errors?.['required']">
+                Post description is required!
+            </p>
+            <p id="validation-error" *ngIf="description.errors?.['minlength']">
+                Post description should be minimum 20 characters.
+            </p>
+            <p id="validation-error" *ngIf="description.errors?.['maxlength']">
+                Post description should be maximum 200 characters.
+            </p>
+        </ng-container>
+
+        <ng-container *ngIf="error">
+            <p id="validation-error">{{error}}</p>
+        </ng-container>
+
+        <button class="btn-main">Add Post</button>
+
+    </form>
+    </div>

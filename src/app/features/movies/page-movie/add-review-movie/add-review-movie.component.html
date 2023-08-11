@@ -1,0 +1,68 @@
+<ng-container *ngIf="!hasReviewed?.['hasReviewed'] && !isOwner && isLogged">
+<p class="hero-top-movie">Add review</p>
+        <div class="container">
+            <form class="row input-container" #reviewForm="ngForm" (submit)="onReview(reviewForm)">
+
+                    <div class="col-xs-12">
+                        <div class="styled-input wide">
+                            <label for="rating">Rating</label> 
+                            <select id="rating" name="rating" class="form-control"
+                            [(ngModel)]="defaultSelectedValue"
+                            ngModel
+                            #rating="ngModel"
+                            required
+                            >
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Not Good</option>
+                                <option value="3">3 - Average</option>
+                                <option value="4">4 - Good</option>
+                                <option value="5">5 - Awesome</option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="styled-input wide">
+                            <label for="review">Review content</label>
+                            <textarea id="review" name="review"
+                            ngModel
+                            #review="ngModel"
+                            required
+                            minlength="15"
+                            maxlength="200"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- review content validation -->
+
+                    <ng-container *ngIf="review.touched || error">
+                        <p id="validation-error" *ngIf="review.errors?.['required']">
+                        Review content is required!
+                        </p>
+                        <p id="validation-error" *ngIf="review.errors?.['minlength']">
+                        Review content must be at least 15 characters!
+                        </p>
+                        <p id="validation-error" *ngIf="review.errors?.['maxlength']">
+                        Review content must be no more than 200 characters!
+                        </p>
+                        <p id="validation-error" *ngIf="review.errors?.['maxlength']">
+                            {{error}}
+                        </p>
+                    </ng-container>
+
+                    <div class="col-xs-12">
+                        <button class="btn-main" type="submit" [disabled]="reviewForm.invalid">Add Review</button>
+                    </div>
+            </form>
+        </div>
+    </ng-container>
+
+<p class="hero-top-movie" *ngIf="hasReviewed?.['hasReviewed']">Already reviewed!</p>
+<p class="hero-top-movie" *ngIf="isOwner">Owner can not add a review!</p>
+<p class="hero-top-movie log-in-message" *ngIf="!isLogged" routerLink="/user/login">Log in to add a review!</p>
+
+
+        
+
+

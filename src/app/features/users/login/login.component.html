@@ -1,0 +1,50 @@
+<div class="container login-wrapper">
+<form class="login-form" #loginForm="ngForm" (submit)="onLogin(loginForm)">
+    <h3>Sign In</h3>
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username..." id="username" name="username"
+    ngModel
+    #username="ngModel"
+    required
+    minlength="5"
+    >
+
+    <ng-container *ngIf="username.touched">
+        <p id="validation-error" *ngIf="username.errors?.['required']">
+            Username is required!
+        </p>
+        <p id="validation-error" *ngIf="username.errors?.['minlength']">
+            Username is less than 5 symbols!
+        </p>
+    </ng-container>
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="******" id="password" name="password"
+    ngModel
+    #password="ngModel"
+    minlength="5"
+    required
+    >
+
+    <ng-container *ngIf="password.touched">
+        <p id="validation-error" *ngIf="password.errors?.['required']">
+            Password is required!
+        </p>
+        <p id="validation-error" *ngIf="password.errors?.['minlength']">
+            Password is less than 5 symbols!
+        </p>
+    </ng-container>
+
+    <!-- if username or password do not match -->
+
+    <ng-container *ngIf="error">
+        <p id="validation-error">{{error}}</p>
+    </ng-container>
+
+    <button class="btn-main">Sign In</button>
+    <div class="register-redirect">
+        <a routerLink="/user/register">Don't have an account? Sign up here!</a>
+    </div>
+</form>
+</div>

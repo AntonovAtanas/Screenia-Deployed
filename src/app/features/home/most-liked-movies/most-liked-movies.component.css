@@ -1,0 +1,107 @@
+/* SECTION SEPARATOR DIV */
+
+.title-wrapper {
+    margin: 42px 0 42px 0;
+}
+
+.title-section {
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 10px;
+    color: #898989;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+/* TOP MOVIES SECTION */
+
+.grid-top-rated-movies {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 48px;
+}
+
+/* TOP MOVIES CARD */
+
+.top-rated-movies-card {
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+.card-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0px 8px 0px 8px;
+}
+
+.movie-card-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 8px;
+}
+
+.card-rating, .card-likes {
+    display: flex;
+    gap: 4px;
+}
+
+.card-total-likes {
+    display: flex;
+}
+
+.stats-icon {
+    height: 14px;
+    width: 14px;
+}
+
+.card-movie-title {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    height: 2.5rem;
+}
+
+.card-movie-title:hover {
+    color: #D87D4A;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-total-rating,
+.card-total-likes,
+.card-see-more-span {
+    margin: 0;
+    color: #bbbbbb;
+    line-height: 14px;
+}
+
+.card-actions {
+    margin-bottom: 14px;
+}
+
+.card-see-more {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    background-color: #2c2c2c;
+    margin-bottom: 14px;
+    padding: 8px 0px 8px 0px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card-see-more:hover {
+    background-color: #0E0E0E;
+}

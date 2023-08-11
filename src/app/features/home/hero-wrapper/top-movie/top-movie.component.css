@@ -1,0 +1,30 @@
+.hero-movie-title {
+    font-size: 28px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.hero-movie-description {
+    font-size: 14px;
+    color: #c4c4c4;
+}
+
+.hero-movie .hero-movie-image {
+    max-height: 455px;
+    width: auto;
+}
+
+.btn-main {
+    text-decoration: none;
+    width: 140px;
+    text-align: center;
+}
+
+.last-movie-link {
+    display: flex;
+    gap: 26px;
+    text-decoration: none;
+    flex-direction: column;
+}

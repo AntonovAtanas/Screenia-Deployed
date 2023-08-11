@@ -1,0 +1,35 @@
+.title-section {
+    text-align: center;
+}
+
+.last-posts-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 24px;
+    margin-bottom: 42px;
+}
+
+.last-posts-card {
+    background: transparent;
+    max-width: 400px;
+    border-left: 2px solid #D87D4A;
+    border-radius: 1px;
+    padding-left: 12px;
+}
+
+.last-posts-card-date {
+    margin: 0 0 12px 0;
+    color: #bbbbbb;
+    font-size: 14px;
+}
+
+.last-posts-card-title {
+    font-weight: bold;
+}
+
+.last-posts-card-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #bbbbbb;
+}

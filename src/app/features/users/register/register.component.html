@@ -1,0 +1,73 @@
+<div class="container register-wrapper">
+    <form class="register-form" #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+        <h3>Sign Up</h3>
+
+        <!-- username -->
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username..." id="username" name="username"
+        #username="ngModel"
+        ngModel
+        required
+        minlength="5"
+        >
+        <!-- username validation -->
+        <ng-container *ngIf="username.touched">
+            <p id="validation-error" *ngIf="username.errors?.['required']">
+                Username is required!
+            </p>
+            <p id="validation-error" *ngIf="username.errors?.['minlength']">
+                Username is less than 5 symbols!
+            </p>
+        </ng-container>
+        
+        <!-- passwords -->
+        <label for="password">Password</label>
+        <input type="password" placeholder="******" id="password" name="password"
+        ngModel
+        #password="ngModel"
+        required
+        minlength="5"
+        >
+
+        <!-- password validation -->
+        <ng-container *ngIf="password.touched">
+            <p id="validation-error" *ngIf="password.errors?.['required']">
+                Password is required!
+            </p>
+            <p id="validation-error" *ngIf="password.errors?.['minlength']">
+                Password is less than 5 symbols!
+            </p>
+        </ng-container>
+        
+        <!-- Re Password -->
+        <label for="rePassword">Repeat Password</label>
+        <input type="password" placeholder="******" id="rePassword" name="rePassword"
+        ngModel
+        #rePassword="ngModel"
+        required
+        >
+
+        <ng-container *ngIf="rePassword.touched">
+            <p id="validation-error" *ngIf="rePassword.errors?.['required']">
+                Password is required!
+            </p>
+            <p id="validation-error" *ngIf="rePassword.errors?.['minlength']">
+                Password is less than 5 symbols!
+            </p>
+            <p id="validation-error" *ngIf="rePassword.value !== password.value">
+                Passwords do not match!
+            </p>
+            
+        </ng-container>
+
+        <!-- if error when registering -->
+        <ng-container *ngIf="error">
+            <p id="validation-error">{{error}}</p>
+        </ng-container>
+
+        <button class="btn-main" type="submit" [disabled]="registerForm.invalid || rePassword.value !== password.value" #button>Sign Up</button>
+        <div class="register-redirect">
+            <a routerLink="/user/login">Have an account? Sign in here!</a>
+        </div>
+    </form>
+    </div>

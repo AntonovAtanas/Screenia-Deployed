@@ -1,0 +1,33 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer-title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 0;
+    margin-top: 18px;
+}
+
+.footer-sub-title {
+    color: #898988;
+    font-size: 14px;
+    margin: 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    height: 18px;
+    width: 18px;
+    fill: white;
+}

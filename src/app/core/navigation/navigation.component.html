@@ -1,0 +1,26 @@
+<header>
+  <nav>
+    <img class="logo" src="../../../assets/img/logo.png" alt="logo" routerLink="/">
+    <form class="search-bar" (submit)="onSearch()">
+      <input class="input-search" type="search" placeholder="Search Movie" aria-label="Search" name="search" [(ngModel)]="searchValue" (input)="onInputSearch($event)" pattern="^[a-zA-Z0-9]+$">
+      <button class="search-button" type="submit" ><img src="../../../assets/img/search-icon-bold.png"
+        alt="search"></button>
+    </form>
+
+    <ul>
+      <li><a routerLink="/">HOME</a></li>
+      <li><a routerLink="/movies/all">ALL MOVIES</a></li>
+      <li><a routerLink="/forum">FORUM</a></li>
+      <ng-container *ngIf="!isLogged">
+        <li><a routerLink="/user/login">LOGIN</a></li>
+        <li><a routerLink="/user/register">REGISTER</a></li>
+      </ng-container>
+      <ng-container *ngIf="isLogged">
+        <li><a routerLink="/movies/add">ADD MOVIE</a></li>
+        <li><a [routerLink]="['/user', 'profile', userId]">MY PROFILE</a></li>
+        <li><a (click)="onLogout()">LOGOUT</a></li>
+      </ng-container>
+    </ul>
+  </nav>
+  <div class="separator"></div>
+</header>

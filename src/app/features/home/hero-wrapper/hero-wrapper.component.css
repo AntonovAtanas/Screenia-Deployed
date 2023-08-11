@@ -1,0 +1,24 @@
+.hero-wrapper {
+    display: flex;
+    gap: 32px;
+    margin-top: 42px;
+    max-height: 455px;
+}
+
+.hero-movie {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 32px;
+    width: 60%;
+}
+
+.hero-movie .hero-movie-details {
+    width: 500px;
+}
+
+app-loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

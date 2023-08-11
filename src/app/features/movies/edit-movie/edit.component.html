@@ -1,0 +1,122 @@
+<div class="container login-wrapper">
+    <form class="login-form" #editMovieForm="ngForm" (submit)="onEdit(editMovieForm)">
+        <h3>Edit Movie</h3>
+        
+        <!-- Edit movie title -->
+        <label for="title">Movie Title</label>
+        <input type="text" placeholder="Title..." id="title" name="title"
+        required
+        #title="ngModel"
+        ngModel
+        minlength="4"
+        maxlength="60"
+        [(ngModel)]="currentMovie.title"
+        >
+        <!-- title validation errors -->
+        <ng-container *ngIf="title.touched">
+            <p id="validation-error" *ngIf="title.errors?.['required']">
+                Movie title is required!
+            </p>
+            <p id="validation-error" *ngIf="title.errors?.['minlength']">
+                Movie title is less than 4 characters!
+            </p>
+            <p id="validation-error" *ngIf="title.errors?.['maxlength']">
+                Movie title should not exceed 60 characters!
+            </p>
+        </ng-container>
+
+        <!-- Edit movie director -->
+        <label for="director">Movie Director</label>
+        <input type="text" placeholder="Director..." id="director" name="director"
+        required
+        #director="ngModel"
+        ngModel
+        minlength="3"
+        maxlength="30"
+        [(ngModel)]="currentMovie.director"
+
+        >
+        <!-- director validation errors -->
+        <ng-container *ngIf="director.touched">
+            <p id="validation-error" *ngIf="director.errors?.['required']">
+                Movie director is required!
+            </p>
+            <p id="validation-error" *ngIf="director.errors?.['minlength']">
+                Movie director is less than 4 characters!
+            </p>
+            <p id="validation-error" *ngIf="director.errors?.['maxlength']">
+                Movie director should not exceed 30 characters!
+            </p>
+        </ng-container>
+        
+        <!-- Edit release year -->
+        <label for="year">Release Year</label>
+        <input type="text" placeholder="Year..." id="year" name="year"
+        required
+        #year="ngModel"
+        ngModel
+        pattern="^(19\d{2}|20[0-2]\d|203\d)$"
+        [(ngModel)]="currentMovie.year"
+
+        >
+        <!-- year validation errors -->
+        <ng-container *ngIf="year.touched">
+            <p id="validation-error" *ngIf="year.errors?.['required']">
+                Release year is required!
+            </p>
+            <p id="validation-error" *ngIf="year.errors?.['pattern']">
+                Invalid movie release year!
+            </p>
+        </ng-container>
+
+        <!-- Edit Image Url -->
+        <label for="imageUrl">Image url</label>
+        <input type="text" placeholder="Movie poster image..." id="imageUrl" name="imageUrl"
+        required
+        ngModel
+        #imageUrl="ngModel"
+        pattern="\bhttps?:\/\/\S+?\.(?:png|jpe?g|gif|bmp|webp)\b"
+        [(ngModel)]="currentMovie.imageUrl"
+
+        >
+        <!-- url validation -->
+        <ng-container *ngIf="imageUrl.touched">
+            <p id="validation-error" *ngIf="imageUrl.errors?.['required']">
+                Image url is required!
+            </p>
+            <p id="validation-error" *ngIf="imageUrl.errors?.['pattern']">
+                Invalid movie url!
+            </p>
+        </ng-container>
+
+        <!-- Edit movie description -->
+        <label for="description">Description</label>
+        <textarea placeholder="Description..." id="description" name="description"
+        #description="ngModel"
+        ngModel
+        required
+        minlength="20"
+        maxlength="1500"
+        [(ngModel)]="currentMovie.description"
+        ></textarea>
+        <!-- description validation -->
+        <ng-container *ngIf="description.touched">
+            <p id="validation-error" *ngIf="description.errors?.['required']">
+                Movie description is required!
+            </p>
+            <p id="validation-error" *ngIf="description.errors?.['minlength']">
+                Movie description should be minimum 20 characters.
+            </p>
+            <p id="validation-error" *ngIf="description.errors?.['maxlength']">
+                Movie description should be maximum 1500 characters.
+            </p>
+        </ng-container>
+
+        <ng-container *ngIf="error">
+            <p id="validation-error">{{error}}</p>
+        </ng-container>
+
+        <button class="btn-main" [disabled]="editMovieForm.invalid">Edit Movie</button>
+
+    </form>
+    </div>

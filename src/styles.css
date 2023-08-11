@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0 50px;
+    background-color: #0E0E0E;
+    height: 100%;
+}
+
+.separator {
+    background-color: #979797;
+    height: 1px;
+    opacity: 0.3
+}
+
+.title-wrapper {
+    margin: 42px 0 42px 0;
+}
+
+.title-section {
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 10px;
+    color: #898989;
+    text-transform: uppercase;
+}
+
+.last-movie-link {
+    display: flex;
+    text-decoration: none;
+}
+
+.last-movie-link:hover .last-movie-title,
+.last-movie-link:hover .hero-movie-title {
+    color: #D87D4A;
+}
+
+.last-movie-title {
+    margin-top: 0px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.btn-main {
+    background-color: #D87D4A;
+    border: 0px;
+    font-size: 13px;
+    color: white;
+    padding: 15px 31px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-main:hover {
+    background-color: #FBAF85;
+}
+
+.hero-top-movie {
+    margin-bottom: 0px;
+    font-size: 14px;
+    letter-spacing: 10px;
+    color: #898989;
+    text-transform: uppercase;
+}
+
+app-root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+app-loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

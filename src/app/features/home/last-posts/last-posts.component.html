@@ -1,0 +1,16 @@
+<div class="title-wrapper">
+    <h3 class="title-section">Last posts</h3>
+</div>
+<!-- LAST POSTS CARD -->
+<div class="last-posts-wrapper">
+    <div class="last-posts-card" *ngFor="let post of lastPosts">
+        <a [routerLink]="['/forum', 'post', post._id]" class="last-movie-link">
+            <div class="last-posts-card-container">
+                <p class="last-posts-card-date">{{post.createdAt | dateAgo}}</p>
+                <p class="last-movie-title last-posts-card-title">{{post.title | truncate:30}}</p>
+                <p class="last-posts-card-text">{{post.description | truncate:50}}</p>
+            </div>
+        </a>
+    </div>
+</div>
+

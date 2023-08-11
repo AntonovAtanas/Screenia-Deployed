@@ -1,0 +1,29 @@
+/* SECTION SEPARATOR DIV */
+
+.title-wrapper {
+    margin: 42px 0 42px 0;
+}
+
+.title-section {
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 10px;
+    color: #898989;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.grid-top-rated-movies {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 42px;
+    column-gap: 48px;
+    margin-bottom: 42px;
+}
+
+app-loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

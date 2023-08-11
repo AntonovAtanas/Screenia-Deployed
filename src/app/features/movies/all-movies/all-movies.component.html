@@ -1,0 +1,12 @@
+    <div class="title-wrapper">
+        <h3 class="title-section">All Movies</h3>
+    </div>
+    
+    <div class="grid-top-rated-movies" *ngIf="!isLoading">
+            <app-movie-card *ngFor="let movie of moviesArr" [movie]="movie"></app-movie-card>
+    </div>
+    <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+    
+    <ng-container *ngIf="error">
+        <p>{{error}}</p>
+    </ng-container>

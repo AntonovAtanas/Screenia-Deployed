@@ -1,0 +1,15 @@
+<ng-container *ngIf="!isLoading">
+<section class="hero-movie-details">
+  <p class="hero-top-movie">TOP MOVIE</p>
+  <a [routerLink]="['/movies', 'details', topMovie._id]" class="last-movie-link">
+    <h1 class="hero-movie-title">{{topMovie.title}} ({{topMovie.year}})</h1>
+    <p class="hero-movie-description">{{topMovie.description | truncate:300}}</p>
+    <a class="btn-main" [routerLink]="['/movies', 'details', topMovie._id]">SEE MORE</a>
+  </a>
+</section>
+<img src="{{topMovie.imageUrl}}" alt="" class="hero-movie-image">
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</ng-container>

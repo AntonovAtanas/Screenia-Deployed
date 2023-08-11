@@ -1,0 +1,9 @@
+.forum-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 42px 0 42px 0;
+}
+
+.btn-main {
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+<div>
+    <p class="hero-top-movie">{{allComments.length == 0 ? 'No comments yet' : 'Comments'}}</p>
+
+    <div class="reviews-container" *ngIf="allComments.length > 0">
+        <ul id="reviews-list" class="reviews-list">
+            <li *ngFor="let comment of allComments" class="review" [@comment1]>
+                <div class="review-main-level">
+
+                    <div class="review-avatar"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB0a9Vv--jOowQtVo_DNHzY7CvSizocuT8pA&usqp=CAU"
+                            alt=""></div>
+
+                    <div class="review-box">
+                        <div class="review-head">
+                            <h6 class="review-name by-author" id="review-username">{{comment.userId.username}}</h6>
+                            <p class="date-commented">{{comment.createdAt | dateAgo}}</p>
+                        </div>
+                        <div class="review-content">
+                            {{comment.comment}}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

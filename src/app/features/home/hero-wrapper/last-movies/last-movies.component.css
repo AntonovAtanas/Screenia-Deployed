@@ -1,0 +1,44 @@
+.last-3-movies {
+    flex-direction: column;
+    display: flex;
+    gap: 6px;
+    padding: 0px;
+}
+
+.last-movies-title {
+    margin-top: 14px;
+    font-size: 14px;
+    letter-spacing: 10px;
+    color: #898989;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.last-movie-link {
+    display: flex;
+    text-decoration: none;
+}
+
+.last-3-movies li {
+    display: flex;
+}
+
+.last-movies-wrapper {
+    margin-left: 12px;
+}
+
+.last-movies-wrapper p {
+    font-size: 14px;
+    color: #c4c4c4;
+}
+
+
+.last-movie img {
+    height: 115px;
+}
+
+app-loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

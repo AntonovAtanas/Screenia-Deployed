@@ -1,0 +1,78 @@
+.login-wrapper {
+    padding-top: 50px;
+    margin-bottom: 42px;
+}
+
+.login-form{
+    height: auto;
+    width: 400px;
+} 
+.login-form *{
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    border: none;
+}
+.login-form h3{
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 0;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input, textarea{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #706f6f;
+    font-weight: 500;
+
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.register-redirect{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.register-redirect a{
+    cursor: pointer;
+}
+
+textarea {
+    font-family: 'Manrope', sans-serif;
+    resize: vertical;
+}
+
+/* errors  */
+
+#validation-error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: #D87D4A;
+    padding-top: 0;
+}
+
+input.ng-invalid.ng-touched {
+    border-left: 5px solid #A94442;
+}

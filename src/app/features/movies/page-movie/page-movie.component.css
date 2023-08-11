@@ -1,0 +1,4 @@
+.movie-detais-wrapper {
+    display: flex;
+    flex-direction: column;
+}
