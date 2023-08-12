@@ -5,6 +5,7 @@
 .login-form{
     height: auto;
     width: 400px;
+    margin-bottom: 42px;
 } 
 .login-form *{
     color: #ffffff;
