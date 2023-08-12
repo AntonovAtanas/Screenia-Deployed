@@ -1,15 +1,17 @@
+<ng-container *ngIf="!isLoading">
+  <h2 class="last-movies-title">Last Movies</h2>
+  <ul class="last-3-movies" *ngFor="let movie of lastThreeMovies">
+    <li class="last-movie">
+      <a [routerLink]="['/movies', 'details', movie._id]" class="last-movie-link">
+        <img
+          src="{{movie.imageUrl}}"
+          alt="{{movie.title}}">
+        <div class="last-movies-wrapper">
+          <h3 class="last-movie-title">{{movie.title}} ({{movie.year}})</h3>
+          <p class="last-movie-subtitle">{{movie.description | truncate:150}}</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</ng-container>
 
-    <h2 class="last-movies-title">Last Movies</h2>
-    <ul class="last-3-movies" *ngFor="let movie of lastThreeMovies">
-      <li class="last-movie">
-        <a [routerLink]="['/movies', 'details', movie._id]" class="last-movie-link">
-          <img
-            src="{{movie.imageUrl}}"
-            alt="{{movie.title}}">
-          <div class="last-movies-wrapper">
-            <h3 class="last-movie-title">{{movie.title}} ({{movie.year}})</h3>
-            <p class="last-movie-subtitle">{{movie.description | truncate:150}}</p>
-          </div>
-        </a>
-      </li>
-    </ul>

@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css'],
 })
-export class EditComponent implements OnInit, OnDestroy {
+export class EditMovieComponent implements OnInit, OnDestroy {
   currentMovieSubscription$!: Subscription;
   editMovieSubscription$!: Subscription;
 

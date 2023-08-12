@@ -10,8 +10,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { AddCommentComponent } from './forum-page/add-comment/add-comment.component';
 import { AllCommentsComponent } from './forum-page/all-comments/all-comments.component';
 
-
-
 @NgModule({
   declarations: [
     AllPostsComponent,

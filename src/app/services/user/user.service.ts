@@ -36,5 +36,5 @@ export class UserService {
         const username = parsedUser.username;
         return username
       }
-    }
+  }
 }

@@ -12,13 +12,17 @@ export class LastMoviesComponent implements OnInit, OnDestroy {
   movieSubscription$!: Subscription;
 
   lastThreeMovies: Movie[] = [];
+  isLoading = true;
   error: string = '';
 
   constructor(private movieService: MovieService){}
 
   ngOnInit(): void {
     this.movieSubscription$ = this.movieService.getLastMovies(3).subscribe({
-      next: (response) => this.lastThreeMovies = response,
+      next: (response) =>{
+        this.isLoading = false;
+        this.lastThreeMovies = response
+      },
       error: (response) => this.error = response.message
     })
   };

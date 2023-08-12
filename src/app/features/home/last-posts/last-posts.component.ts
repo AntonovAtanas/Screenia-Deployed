@@ -14,12 +14,16 @@ export class LastPostsComponent implements OnInit, OnDestroy {
   lastPostsSubscription$!: Subscription;
   lastPosts: Post[] = [];
   error: string = '';
+  isLoading = true;
 
   constructor(private forumService: ForumService){};
 
   ngOnInit(): void {
     this.lastPostsSubscription$ = this.forumService.getLastThreePosts().subscribe({
-      next: (posts) => this.lastPosts = posts,
+      next: (posts) => {
+        this.isLoading = false;
+        this.lastPosts = posts
+      },
       error: (response) => this.error = response.message
     })
   }

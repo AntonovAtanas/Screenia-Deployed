@@ -9,7 +9,8 @@ import { DetailsMovieComponent } from './page-movie/details-movie/details-movie.
 import { PageMovieComponent } from './page-movie/page-movie.component';
 import { AddReviewMovieComponent } from './page-movie/add-review-movie/add-review-movie.component';
 import { AllReviewsMovieComponent } from './page-movie/all-reviews-movie/all-reviews-movie.component';
-import { EditComponent } from './edit-movie/edit.component';
+import { EditMovieComponent } from './edit-movie/edit.component';
+import { SearchResultsComponent } from '../search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditComponent } from './edit-movie/edit.component';
     PageMovieComponent,
     AddReviewMovieComponent,
     AllReviewsMovieComponent,
-    EditComponent
+    EditMovieComponent,
+    SearchResultsComponent
   ],
   imports: [
     CommonModule,
