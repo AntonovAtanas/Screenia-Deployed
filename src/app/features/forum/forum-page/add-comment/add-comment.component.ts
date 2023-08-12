@@ -31,7 +31,8 @@ export class AddCommentComponent implements OnInit, OnDestroy {
 
     this.addCommentSubscription$ = this.forumService.addComment({...commentForm.value, userId: this.userId}, this.postId).subscribe({
       next: (comment) => {
-        this.forumService.notifyAddedComment(comment)
+        const username = this.userService.getUsername();
+        this.forumService.notifyAddedComment({...comment, userId: {username: username}})
         commentForm.reset();
       },
       error: (error) => this.error = error.message
