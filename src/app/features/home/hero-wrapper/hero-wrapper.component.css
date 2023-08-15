@@ -22,3 +22,28 @@ app-loading-spinner {
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 1300px) {
+    .hero-wrapper {
+        flex-direction: column;
+        align-items: center;
+        max-height: fit-content;
+    }
+
+    .hero-movie {
+        width: 100%
+    }   
+}
+
+@media (max-width: 780px) {
+
+    .hero-movie {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 590px) {
+    .hero-movie {
+        flex-direction: column-reverse;
+    }
+}

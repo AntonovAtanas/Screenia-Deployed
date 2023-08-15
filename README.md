@@ -129,3 +129,7 @@ The Shared Module includes components that are shared across the application.
 # User login page
 
 ![image](https://github.com/AntonovAtanas/Screenia---Movie-Website/assets/114076833/6342bdba-d0f1-4fcd-99fa-2fe9e46252c9)
+
+
+
+

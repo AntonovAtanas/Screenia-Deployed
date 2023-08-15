@@ -11,8 +11,9 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class NavigationComponent   {
   userId: string = '';
-
   searchValue: string = '';
+
+  isHamburgerMenuShown = false;
 
   constructor(
     private authService: AuthService,
@@ -33,7 +34,7 @@ export class NavigationComponent   {
   onInputSearch(event: Event) {
     this.searchValue = (event.target as HTMLInputElement).value
     this.movieService.notifyNewSearch(this.searchValue);
-  }
+  };
 
   onSearch() {
     if (this.searchValue == '') {
@@ -41,10 +42,14 @@ export class NavigationComponent   {
     }
     this.router.navigate([`movies/search`]);
     this.movieService.notifyNewSearch(this.searchValue);
-  }
+  };
 
   onLogout(): void {
     this.authService.logout();
     this.router.navigate(['/']);
+  };
+
+  hamburgerMenuToggle(){
+     this.isHamburgerMenuShown == true ? this.isHamburgerMenuShown = false : this.isHamburgerMenuShown = true
   }
 }

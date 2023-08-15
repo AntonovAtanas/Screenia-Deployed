@@ -97,3 +97,10 @@ app-loading-spinner {
     justify-content: center;
     align-items: center;
 }
+
+
+@media (max-width: 780px) {
+    body {
+        padding: 0 20px;
+    }
+}

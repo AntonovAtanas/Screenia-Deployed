@@ -42,3 +42,9 @@ app-loading-spinner {
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 590px) {
+    .last-movies-title {
+        text-align: center;
+    }
+}

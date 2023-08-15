@@ -16,7 +16,7 @@
 
 .grid-top-rated-movies {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     grid-row-gap: 42px;
     column-gap: 48px;
     margin-bottom: 42px;

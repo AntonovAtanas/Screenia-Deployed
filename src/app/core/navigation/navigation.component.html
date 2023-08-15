@@ -7,7 +7,13 @@
         alt="search"></button>
     </form>
 
-    <ul>
+    <a (click)="hamburgerMenuToggle()" class="burger-menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+
+    <ul [ngClass]="{'active': isHamburgerMenuShown}">
       <li><a routerLink="/">HOME</a></li>
       <li><a routerLink="/movies/all">ALL MOVIES</a></li>
       <li><a routerLink="/forum">FORUM</a></li>

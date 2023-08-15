@@ -28,3 +28,39 @@
     text-decoration: none;
     flex-direction: column;
 }
+
+@media (max-width: 1300px) {
+    .hero-movie-image {
+        max-height: 355px;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .hero-top-movie {
+        margin: 0;
+    }
+
+    .hero-movie-title {
+        font-size: 24px;
+        margin-top: 8px;
+    }
+
+    .last-movie-link {
+        gap: 12px;
+    }
+
+    .hero-movie-description {
+        margin: 0;
+    }
+}
+
+@media (max-width: 590px) {
+    .hero-movie-image {
+        object-fit: contain;
+    }
+
+    .hero-top-movie {
+        text-align: center;
+    }
+}
