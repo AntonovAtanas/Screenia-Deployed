@@ -11,7 +11,6 @@
     border-radius: 2px;
     border-left: 3px solid #D87D4A;
     background-color: #1a1a1a;
-    width: 780px;
   }
   
   .card__title{
@@ -45,7 +44,6 @@
   
   .timeline__card{
     position: relative;
-    margin-left: var(--timelineCardLineGap, 1rem);
   }
   
   .timeline__cards{

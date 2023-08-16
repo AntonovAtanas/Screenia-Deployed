@@ -21,20 +21,23 @@
 
 .card {
     padding: 30px;
-    position: relative;
-    box-shadow: 0 0 5px rgba(75, 75, 75, .07);
-    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    height: 100%;
 }
 
 .card-body {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 65%;
     padding-left: 30px;
 }
 
 .card-top-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    
 }
 
 .rating-wrapper {
@@ -88,16 +91,15 @@
 .card-description {
     display: inline-block;
     font-weight: 300;
-    margin: 10px 0 70px;
+    margin: 10px 0 10px;
     font-size: 14px;
 }
 
 .card-buttons {
+    margin-top: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
-    position: absolute;
-    bottom: 30px;
 }
 
 .card-tag {
@@ -105,11 +107,57 @@
     margin: 5px 0 0;
 }
 
+.card-media-div {
+    object-fit: contain;
+    height: 400px;
+}
+
 .card-media {
     float: left;
-    height: 400px;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
 }
 
 a {
     text-decoration: none;
+}
+
+@media (max-width: 1020px) {
+    .card-container {
+        width: 100%;
+    }
+
+    .card-media {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .card {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .card-body {
+        width: 90%;
+        padding: 0;
+    }
+
+    .card-top-wrapper {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .movie-year {
+        align-self: flex-start;
+    }
+
+    .rating-wrapper {
+        margin: 0 auto;
+    }
 }

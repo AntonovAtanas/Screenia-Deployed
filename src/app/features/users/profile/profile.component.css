@@ -14,8 +14,10 @@
 
 .grid-top-rated-movies {
     display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr)); */
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 48px;
+    grid-row-gap: 42px;
+    column-gap: 18px;
     margin: 18px 0 18px 0;
     margin-bottom: 42px;
 }
@@ -29,4 +31,34 @@ app-loading-spinner {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 1150px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 460px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 340px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

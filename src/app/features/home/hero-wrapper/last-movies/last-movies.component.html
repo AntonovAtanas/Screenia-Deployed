@@ -1,7 +1,7 @@
 <ng-container *ngIf="!isLoading">
   <h2 class="last-movies-title">Last Movies</h2>
-  <ul class="last-3-movies" *ngFor="let movie of lastThreeMovies">
-    <li class="last-movie">
+  <ul class="last-3-movies">
+    <li class="last-movie" *ngFor="let movie of lastThreeMovies">
       <a [routerLink]="['/movies', 'details', movie._id]" class="last-movie-link">
         <img
           src="{{movie.imageUrl}}"

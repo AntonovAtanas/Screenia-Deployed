@@ -21,8 +21,8 @@ ul {
 }
 
 .reviews-container {
-    margin: 0 auto 26px;
-    width: 768px;
+    margin: 0 auto 0;
+    width: 726px;
 }
 
 .reviews-container h1 {
@@ -38,7 +38,7 @@ ul {
 }
 
 .reviews-list li {
-    padding: 24px 0 24px 12px;
+    padding: 24px 0 24px 0;
     display: block;
     position: relative;
     background-color: #1a1a1a;
@@ -46,52 +46,17 @@ ul {
 
 .review-box {
     background-color: #1a1a1a;
-
-}
-
-/**
-   * Avatar
-   ---------------------------*/
-.reviews-list .review-avatar {
-    width: 65px;
-    height: 65px;
-    position: relative;
-    z-index: 99;
-    float: left;
-    overflow: hidden;
-}
-
-.reviews-list .review-avatar img {
     width: 100%;
-    height: 100%;
+
 }
 
 .reviews-list .review-box {
-    width: 680px;
-    float: right;
-    position: relative;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    padding: 0 8px 0 8px;
 }
-
-.reviews-list .review-box:before,
-.reviews-list .review-box:after {
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    display: block;
-    border-width: 10px 12px 10px 0;
-    border-style: solid;
-    border-color: transparent #1a1a1a;
-    top: 8px;
-    left: -11px;
-}
-
 
 .review-box .review-head {
-    padding: 10px 12px;
+    display: flex;
+    padding: 10px ;
     border-bottom: 1px solid #353434;
     overflow: hidden;
     -webkit-border-radius: 4px 4px 0 0;
@@ -99,32 +64,21 @@ ul {
     border-radius: 4px 4px 0 0;
 }
 
+.date-added {
+    color: #aaa;
+    margin-left: auto;
+    font-size: 15px;
+}
+
 .stats-icon {
     height: 14px;
     width: 14px;
-}
-
-.review-box .review-head i {
-    float: right;
-    margin-left: 14px;
-    position: relative;
-    top: 2px;
-    color: #A6A6A6;
-    cursor: pointer;
-    -webkit-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
-
-.review-box .review-head i:hover {
-    color: #03658c;
 }
 
 .review-box .review-name {
     color: white;
     font-size: 14px;
     font-weight: 700;
-    float: left;
     margin-right: 10px;
 }
 
@@ -132,13 +86,6 @@ ul {
     color: #283035;
 }
 
-.review-box .review-head span {
-    float: left;
-    color: #999;
-    font-size: 13px;
-    position: relative;
-    top: 1px;
-}
 
 .review-box .review-content {
     padding: 12px 12px 0 12px;
@@ -150,13 +97,24 @@ ul {
 }
 
 /** ===================== Responsive ========================*/
-@media only screen and (max-width: 766px) {
+@media (max-width: 900px) {
     .reviews-container {
-        width: 480px;
+        width: 80%
+    }
+}
+
+@media (max-width: 424px) {
+    .review-stars {
+        display: flex;
     }
 
-    .reviews-list .review-box {
-        width: 390px;
+    .review-head {
+        flex-wrap: wrap;
     }
 
+    .date-added {
+        margin: 0;
+        order: 1;
+        flex: 100%;
+    }
 }

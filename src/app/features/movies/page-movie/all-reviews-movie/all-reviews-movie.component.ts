@@ -42,7 +42,7 @@ export class AllReviewsMovieComponent implements OnInit, OnDestroy {
   getReviews(){
     const movieId = this.activatedRoute.snapshot.params['id'];
     this.subscription$ = this.reviewService.getAllReviews(movieId).subscribe({
-      next: (response) =>  this.allReviews = response,
+      next: (response) => this.allReviews = response,
       error: (response) => console.log('error', response.message)
     })
   };

@@ -45,7 +45,6 @@ nav ul li a:hover {
     border: 0;
     flex: 1;
     outline: none;
-    background-color: white;
 }
 
 .search-button {
@@ -137,5 +136,18 @@ nav ul li a:hover {
 
     .search-bar {
         margin: 0 12px 0 12px;
+    }
+}
+
+@media (max-width: 342px) {
+
+    nav {
+        flex-direction: column;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .search-bar {
+        margin: 0;
     }
 }

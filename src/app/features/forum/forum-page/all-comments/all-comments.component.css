@@ -46,48 +46,9 @@ ul {
 
 .review-box {
     background-color: #1a1a1a;
-
-}
-
-/**
-   * Avatar
-   ---------------------------*/
-.reviews-list .review-avatar {
-    width: 65px;
-    height: 65px;
-    position: relative;
-    z-index: 99;
-    float: left;
-    overflow: hidden;
-}
-
-.reviews-list .review-avatar img {
     width: 100%;
-    height: 100%;
 }
 
-.reviews-list .review-box {
-    width: 680px;
-    float: right;
-    position: relative;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-.reviews-list .review-box:before,
-.reviews-list .review-box:after {
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    display: block;
-    border-width: 10px 12px 10px 0;
-    border-style: solid;
-    border-color: transparent #1a1a1a;
-    top: 8px;
-    left: -11px;
-}
 
 .review-head {
     display: flex;
@@ -160,13 +121,8 @@ ul {
 }
 
 /** ===================== Responsive ========================*/
-@media only screen and (max-width: 766px) {
+@media (max-width: 980px) {
     .reviews-container {
-        width: 480px;
+        width: 80%;
     }
-
-    .reviews-list .review-box {
-        width: 390px;
-    }
-
 }

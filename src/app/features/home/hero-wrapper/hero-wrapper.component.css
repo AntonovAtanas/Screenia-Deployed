@@ -32,7 +32,12 @@ app-loading-spinner {
 
     .hero-movie {
         width: 100%
-    }   
+    }
+
+    .hero-last-movies {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 780px) {

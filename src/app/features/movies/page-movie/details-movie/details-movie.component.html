@@ -2,7 +2,6 @@
     <div class="card u-clearfix">
         <div class="card-body">
             <div class="card-top-wrapper">
-                <span class="subtle movie-year">{{currentMovie.year}}</span>
                 <div class="rating-wrapper">
                     <ng-container *ngIf="rating">
                         <p class="movie-rating">{{rating +' / 5'}}</p>
@@ -24,9 +23,10 @@
                     </div>
                 </div>
             </div>
+            <span class="subtle movie-year">{{currentMovie.year}}</span>
             <span class="card-director subtle">{{currentMovie.director}}</span>
             <h2 class="card-title">{{currentMovie.title}}</h2>
-            <span class="card-description subtle">{{currentMovie.description}}</span>
+            <p class="card-description subtle">{{currentMovie.description}}</p>
             <div class="card-buttons" *ngIf="isLogged">
                 <!-- if the user has liked the movie -->
                 <button class="btn-main" *ngIf="!hasLiked?.['hasLiked'] && !isOwner" (click)="likeMovie()">Like</button>
@@ -39,6 +39,8 @@
                 </ng-container>
             </div>
         </div>
-        <img src="{{currentMovie.imageUrl}}" alt="{{currentMovie.title}}" class="card-media" />
+        <div class="card-media-div">
+            <img src="{{currentMovie.imageUrl}}" alt="{{currentMovie.title}}" class="card-media" />
+        </div>
     </div>
 </div>
