@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../interfaces/User';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { CONSTS } from 'src/app/environments/constants';
 import { Movie } from 'src/app/interfaces/Movie';
 import { ENDPOINT } from 'src/app/environments/endpoints';
@@ -10,6 +10,8 @@ import { ENDPOINT } from 'src/app/environments/endpoints';
   providedIn: 'root',
 })
 export class UserService {
+  isUserLogged$$ = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient) {}
 
   register(userData: User): Observable<User> {
@@ -21,8 +23,6 @@ export class UserService {
   };
 
   getUserId(){
-    // error when user not logged in?
-    // const userData = JSON.parse(localStorage.getItem(CONSTS.localStorageAuth)!)._id;
     const userData = localStorage.getItem(CONSTS.localStorageAuth)
     
     if (userData) {
@@ -44,5 +44,10 @@ export class UserService {
         const username = parsedUser.username;
         return username
       }
-  }
+  };
+
+  notifyUserAuth(loginStatus: boolean){
+    this.isUserLogged$$.next(loginStatus);
+  };
+
 }

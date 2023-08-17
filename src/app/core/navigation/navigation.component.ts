@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { MovieService } from 'src/app/services/movie/movie.service';
@@ -9,11 +9,13 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css'],
 })
-export class NavigationComponent   {
+export class NavigationComponent implements OnInit{
   userId: string = '';
   searchValue: string = '';
 
   isHamburgerMenuShown = false;
+
+  isLogged = false;
 
   constructor(
     private authService: AuthService,
@@ -22,13 +24,14 @@ export class NavigationComponent   {
     private userService: UserService
   ) {}
 
+  ngOnInit(): void {
+    this.isLogged = this.authService.isLogged();
+    this.userService.notifyUserAuth(this.isLogged);
 
-  get isLogged(): boolean {
-    let isLogged = this.authService.isLogged()
-    if (isLogged){
-      this.userId = this.userService.getUserId();
-    }
-    return isLogged;
+    this.userService.isUserLogged$$.subscribe({
+      next: response => this.isLogged = response
+    })
+
   }
 
   onInputSearch(event: Event) {
@@ -46,10 +49,11 @@ export class NavigationComponent   {
 
   onLogout(): void {
     this.authService.logout();
+    this.userService.notifyUserAuth(false);
     this.router.navigate(['/']);
   };
 
   hamburgerMenuToggle(){
      this.isHamburgerMenuShown == true ? this.isHamburgerMenuShown = false : this.isHamburgerMenuShown = true
-  }
+  };
 }
