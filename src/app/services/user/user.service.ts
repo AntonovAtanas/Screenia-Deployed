@@ -21,7 +21,15 @@ export class UserService {
   };
 
   getUserId(){
-    return JSON.parse(localStorage.getItem(CONSTS.localStorageAuth)!)._id;
+    // error when user not logged in?
+    // const userData = JSON.parse(localStorage.getItem(CONSTS.localStorageAuth)!)._id;
+    const userData = localStorage.getItem(CONSTS.localStorageAuth)
+    
+    if (userData) {
+      return JSON.parse(userData)._id
+    }
+
+    return false
   };
 
   getUserLikedMovies(userId: string){
@@ -29,7 +37,7 @@ export class UserService {
   };
 
   getUsername(){
-    const storedUser = localStorage.getItem("user");
+    const storedUser = localStorage.getItem(CONSTS.localStorageAuth);
 
       if (storedUser) {
         const parsedUser = JSON.parse(storedUser);

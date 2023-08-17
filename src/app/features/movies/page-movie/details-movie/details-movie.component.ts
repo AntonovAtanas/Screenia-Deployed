@@ -113,8 +113,8 @@ export class DetailsMovieComponent implements OnInit, OnDestroy {
 
   hasUserLiked() {
     const userId = this.userService.getUserId();
-
-    this.hasLiked$ = this.movieService
+    if (userId) {
+      this.hasLiked$ = this.movieService
       .hasUserLiked(this.movieId, userId)
       .subscribe({
         next: (response) => {
@@ -122,6 +122,8 @@ export class DetailsMovieComponent implements OnInit, OnDestroy {
         },
         error: (response) => (this.error = response.message),
       });
+    }
+    
   };
 
   unlike() {
