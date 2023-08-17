@@ -45,6 +45,7 @@ nav ul li a:hover {
     border: 0;
     flex: 1;
     outline: none;
+    background-color: white;
 }
 
 .search-button {
