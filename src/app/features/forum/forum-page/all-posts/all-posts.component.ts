@@ -14,12 +14,14 @@ export class AllPostsComponent implements OnInit, OnDestroy {
   allPosts: Post[] = [];
 
   error: string = '';
+  isLoading: boolean = true;
   
   constructor(private forumService: ForumService) {}
 
   ngOnInit(): void {
     this.allPostsSubscription$ = this.forumService.getAllPosts().subscribe({
       next: (allPosts) => {
+        this.isLoading = false;
         this.allPosts = allPosts;
       },
       error: (error) => this.error = error.message

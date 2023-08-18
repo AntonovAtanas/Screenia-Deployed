@@ -10,7 +10,7 @@ import { MovieService } from 'src/app/services/movie/movie.service';
 })
 export class TopMovieComponent implements OnInit, OnDestroy {
   topMovieSubscription$!: Subscription;
-  topMovie!: Movie
+  topMovie!: Movie;
 
   isLoading: boolean = false;
 
@@ -23,11 +23,11 @@ export class TopMovieComponent implements OnInit, OnDestroy {
 
     this.topMovieSubscription$ = this.movieService.getTopMovie().subscribe({
       next: (response) => {
-      this.topMovie = response
-      this.isLoading = false;
+        this.topMovie = response;
+        this.isLoading = false;
       },
-      error: (response) => this.error = response.message
-    })
+      error: (response) => (this.error = response.message),
+    });
   }
 
   ngOnDestroy(): void {

@@ -17,11 +17,11 @@
     width: 500px;
 }
 
-app-loading-spinner {
+/* app-loading-spinner {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 @media (max-width: 1300px) {
     .hero-wrapper {

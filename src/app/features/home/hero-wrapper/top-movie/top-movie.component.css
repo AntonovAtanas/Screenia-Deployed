@@ -29,6 +29,12 @@
     flex-direction: column;
 }
 
+app-loading-spinner {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @media (max-width: 1300px) {
     .hero-movie-image {
         max-height: 355px;
