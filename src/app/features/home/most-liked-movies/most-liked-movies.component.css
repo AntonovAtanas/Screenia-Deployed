@@ -19,8 +19,8 @@
 
 .grid-top-rated-movies {
     display: grid;
-    /* grid-template-columns: repeat(6, 1fr); */
-    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    grid-template-columns: repeat(6, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); */
     grid-row-gap: 42px;
     column-gap: 18px;
 }
@@ -106,4 +106,25 @@
 
 .card-see-more:hover {
     background-color: #0E0E0E;
+}
+
+@media (max-width: 900px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+@media (max-width: 470px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (max-width: 335px) {
+    .grid-top-rated-movies {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
 }
