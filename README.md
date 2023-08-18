@@ -16,7 +16,7 @@ https://screenia.netlify.app/
 - **Angular**: The frontend of Screenia is developed using the Angular framework, enabling dynamic, single-page application behavior.
 - **TypeScript**: Angular applications are built using TypeScript for improved code structure and maintainability.
 - **HTML and CSS**: The website's structure and styling are implemented using HTML5 and CSS3.
-- **RESTful API**: I created a custom RESTful API server using Node.js, Express.js, MongoDB with Mongoose, Bcrypt and JsonWebtoken to handle server-side functionalities and backend operations.
+- **RESTful API**: I created [a custom RESTful API server'](https://github.com/AntonovAtanas/RestfulAPI-for-Screenia) using Node.js, Express.js, MongoDB with Mongoose, Bcrypt and JsonWebtoken to handle server-side functionalities and backend operations.
 - **Other**: Implemented Angular Animations, Moment.js library, SVG icons
 
 # Purpose
