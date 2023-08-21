@@ -29,7 +29,12 @@ export class NavigationComponent implements OnInit{
     this.userService.notifyUserAuth(this.isLogged);
 
     this.userService.isUserLogged$$.subscribe({
-      next: response => this.isLogged = response
+      next: response => {
+        this.isLogged = response;
+        if (this.isLogged) {
+          this.userId = this.userService.getUserId();
+        }
+      } 
     })
 
   }
