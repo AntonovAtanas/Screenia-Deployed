@@ -31,7 +31,10 @@ export class UserProfileComponent implements OnInit, OnDestroy{
         this.moviesArr = response;
         this.isLoading = false;
       } ,
-      error: (response) => this.error = response.message
+      error: (response) => {
+        this.error = response.message;
+        this.isLoading = false;
+      } 
     })
   }
 
