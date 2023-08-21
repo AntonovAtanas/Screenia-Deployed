@@ -56,4 +56,11 @@ export class NavigationComponent implements OnInit{
   hamburgerMenuToggle(){
      this.isHamburgerMenuShown == true ? this.isHamburgerMenuShown = false : this.isHamburgerMenuShown = true
   };
+
+  // hide hamburger menu when clicked on link
+  toggleHamburgerMenu() {
+    if (this.isHamburgerMenuShown == true) {
+      this.isHamburgerMenuShown = false
+    }
+  }
 }

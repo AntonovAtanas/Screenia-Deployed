@@ -13,7 +13,7 @@
       <span class="bar"></span>
     </a>
 
-    <ul [ngClass]="{'active': isHamburgerMenuShown}">
+    <ul [ngClass]="{'active': isHamburgerMenuShown}" (click)="toggleHamburgerMenu()">
       <li><a routerLink="/">HOME</a></li>
       <li><a routerLink="/movies/all">ALL MOVIES</a></li>
       <li><a routerLink="/forum">FORUM</a></li>
