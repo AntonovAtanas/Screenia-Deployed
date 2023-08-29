@@ -78,7 +78,7 @@
                 Image url is required!
             </p>
             <p id="validation-error" *ngIf="imageUrl.errors?.['pattern']">
-                Invalid movie url!
+                Invalid movie image url!
             </p>
         </ng-container>
 
@@ -108,7 +108,7 @@
             <p id="validation-error">{{error}}</p>
         </ng-container>
 
-        <button class="btn-main">Add Movie</button>
+        <button class="btn-main" [disabled]="addMovieForm.invalid">Add Movie</button>
 
     </form>
     </div>

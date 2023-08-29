@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, catchError, map, of, tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -36,6 +36,7 @@ export class LoginComponent implements OnDestroy {
         this.router.navigate(['/']);
       },
       error: (response) => {
+        console.log(response)
         this.error = response.error.message;
         loginForm.reset();
       },

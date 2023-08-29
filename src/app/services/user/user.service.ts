@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../interfaces/User';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, tap, throwError } from 'rxjs';
 import { CONSTS } from 'src/app/environments/constants';
 import { Movie } from 'src/app/interfaces/Movie';
 import { ENDPOINT } from 'src/app/environments/endpoints';

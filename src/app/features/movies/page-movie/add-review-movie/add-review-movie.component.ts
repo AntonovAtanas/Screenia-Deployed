@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CONSTS } from 'src/app/environments/constants';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { MovieService } from 'src/app/services/movie/movie.service';
 import { ReviewService } from 'src/app/services/review/review.service';
