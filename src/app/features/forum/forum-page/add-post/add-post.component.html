@@ -50,7 +50,7 @@
             <p id="validation-error">{{error}}</p>
         </ng-container>
 
-        <button class="btn-main">Add Post</button>
+        <button class="btn-main" [disabled]="addPost.invalid">Add Post</button>
 
     </form>
     </div>

@@ -24,6 +24,9 @@ export class AddPostComponent implements OnDestroy, OnInit {
   }
 
   onCreate(postForm: NgForm){
+    if(postForm.invalid) {
+      return;
+    }
     this.addPostSubsription$ = this.forumService.addPost({...postForm.value, _ownerId: this.userId}).subscribe({
       next: () => this.router.navigate(['/forum']),
       error: (error) => this.error = error.message
