@@ -1,6 +1,6 @@
 # Screenia - Watch The Best Movies
 
-Welcome to Screenia, your ultimate destination for discovering and exploring a vast collection of movies and TV series. MovieFlix is a dynamic and user-friendly movie catalog website developed using Angular, designed to provide users with a seamless and engaging movie browsing experience.
+Welcome to Screenia, your ultimate destination for discovering and exploring a vast collection of movies and TV series. Screenia is a dynamic and user-friendly movie catalog website developed using Angular, designed to provide users with a seamless and engaging movie browsing experience.
 
 # Demo:
 https://screenia.netlify.app/
