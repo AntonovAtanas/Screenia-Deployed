@@ -22,4 +22,11 @@ describe('ForumPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show add post button', () => {
+    const btn = fixture.debugElement.nativeElement.querySelector('.btn-main');
+
+    expect(btn).toBeTruthy();
+    expect(btn.textContent).toEqual('Add post');
+  });
 });

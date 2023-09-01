@@ -7,7 +7,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ForumService } from 'src/app/services/forum/forum.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { DebugElement } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { of } from 'rxjs';
 
 describe('AddCommentComponent', () => {
