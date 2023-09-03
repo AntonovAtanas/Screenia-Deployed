@@ -42,7 +42,7 @@
         <p id="validation-error">{{error}}</p>
     </ng-container>
 
-    <button class="btn-main">Sign In</button>
+    <button class="btn-main" [disabled]="loginForm.invalid">Sign In</button>
     <div class="register-redirect">
         <a routerLink="/user/register">Don't have an account? Sign up here!</a>
     </div>

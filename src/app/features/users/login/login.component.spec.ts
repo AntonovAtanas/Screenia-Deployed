@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
 
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let el: DebugElement;
@@ -133,7 +133,7 @@ fdescribe('LoginComponent', () => {
     // Act
     mockUserService.login.and.returnValue(of(mockForm));
     component.onLogin(mockForm);
-    
+
     // Assert
     expect(routerSpy).toHaveBeenCalledWith(['/']);
   });
