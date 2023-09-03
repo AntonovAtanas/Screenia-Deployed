@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { NgForm } from '@angular/forms';
 import { of } from 'rxjs';
 
-fdescribe('RegisterComponent', () => {
+describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;  
   let el: DebugElement;
