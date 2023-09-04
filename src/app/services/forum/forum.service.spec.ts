@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/Post';
 import { Comment } from 'src/app/interfaces/Comment';
 import { ENDPOINT } from 'src/app/environments/endpoints';
 
-fdescribe('ForumService', () => {
+describe('ForumService', () => {
   let forumService: ForumService;
   let httpTestingController: HttpTestingController;
 
