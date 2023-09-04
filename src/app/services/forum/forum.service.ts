@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Post } from 'src/app/interfaces/Post';
+import { Comment } from 'src/app/interfaces/Comment';
 import { ENDPOINT } from 'src/app/environments/endpoints';
 
 @Injectable({
@@ -15,7 +16,6 @@ export class ForumService {
   constructor(private http: HttpClient) { }
 
   addPost(postData: Post){
-    // return this.http.post('http://localhost:3000/forum/add', postData);
     return this.http.post(`${ENDPOINT.forum}/add`, postData);
   };
 
