@@ -62,6 +62,8 @@ describe('AddReviewMovieComponent', () => {
 
   it('does not show the add review if user is not logged in', () => {
     // Arrange
+    component.isLogged = false;
+    fixture.detectChanges();
     const message = el.nativeElement.querySelector('.hero-top-movie');
     const addReviewContainer = el.nativeElement.querySelector('.container')
 
@@ -182,7 +184,12 @@ describe('AddReviewMovieComponent', () => {
     // Act
 
     reviewInput.value = 'Testing the adding a review option';
+    reviewInput.dispatchEvent(new Event('input'));
+
     ratingInput.value = '5';
+    ratingInput.dispatchEvent(new Event('input'));
+
+    fixture.detectChanges();
 
     const mockForm = <any> {
       value: {
@@ -191,7 +198,7 @@ describe('AddReviewMovieComponent', () => {
       },
       reset: () => null,
     };
-
+    
     mockReviewService.addReview.and.returnValue(of('review'));
 
     component.onReview(mockForm);
