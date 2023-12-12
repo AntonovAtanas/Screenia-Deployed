@@ -7,22 +7,25 @@ import { UserService } from 'src/app/services/user/user.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
-export class UserProfileComponent implements OnInit, OnDestroy{
-  userLikedMovies$!: Subscription
+export class UserProfileComponent implements OnInit, OnDestroy {
+  userLikedMovies$!: Subscription;
 
   moviesArr: Movie[] = [];
   userId: string = '';
   error: string = '';
   isLoading: boolean = false;
 
-  constructor(private userService: UserService, private activatedRoute: ActivatedRoute){}
+  constructor(
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.isLoading = true;
     this.userId = this.activatedRoute.snapshot.params['id'];
-    this.userLikedMovies$ = this.getUserMovies()
+    this.userLikedMovies$ = this.getUserMovies();
   }
 
   getUserMovies() {
@@ -30,12 +33,12 @@ export class UserProfileComponent implements OnInit, OnDestroy{
       next: (response) => {
         this.moviesArr = response;
         this.isLoading = false;
-      } ,
+      },
       error: (response) => {
         this.error = response.message;
         this.isLoading = false;
-      } 
-    })
+      },
+    });
   }
 
   ngOnDestroy(): void {
