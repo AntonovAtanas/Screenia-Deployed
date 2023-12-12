@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css'],
 })
-export class NavigationComponent implements OnInit{
+export class NavigationComponent implements OnInit {
   userId: string = '';
   searchValue: string = '';
 
@@ -29,20 +29,20 @@ export class NavigationComponent implements OnInit{
     this.userService.notifyUserAuth(this.isLogged);
 
     this.userService.isUserLogged$$.subscribe({
-      next: response => {
+      next: (response) => {
         this.isLogged = response;
+
         if (this.isLogged) {
           this.userId = this.userService.getUserId();
         }
-      } 
-    })
-
+      },
+    });
   }
 
   onInputSearch(event: Event) {
-    this.searchValue = (event.target as HTMLInputElement).value
+    this.searchValue = (event.target as HTMLInputElement).value;
     this.movieService.notifyNewSearch(this.searchValue);
-  };
+  }
 
   onSearch() {
     if (this.searchValue == '') {
@@ -50,22 +50,24 @@ export class NavigationComponent implements OnInit{
     }
     this.router.navigate([`movies/search`]);
     this.movieService.notifyNewSearch(this.searchValue);
-  };
+  }
 
   onLogout(): void {
     this.authService.logout();
     this.userService.notifyUserAuth(false);
     this.router.navigate(['/']);
-  };
+  }
 
-  hamburgerMenuToggle(){
-     this.isHamburgerMenuShown == true ? this.isHamburgerMenuShown = false : this.isHamburgerMenuShown = true
-  };
+  hamburgerMenuToggle() {
+    this.isHamburgerMenuShown == true
+      ? (this.isHamburgerMenuShown = false)
+      : (this.isHamburgerMenuShown = true);
+  }
 
   // hide hamburger menu when clicked on link
   toggleHamburgerMenu() {
     if (this.isHamburgerMenuShown == true) {
-      this.isHamburgerMenuShown = false
+      this.isHamburgerMenuShown = false;
     }
   }
 }

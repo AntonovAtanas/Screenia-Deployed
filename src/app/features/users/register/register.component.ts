@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnDestroy{
+export class RegisterComponent implements OnDestroy {
   registerSubscription$!: Subscription;
   error: string = '';
 
@@ -29,8 +29,8 @@ export class RegisterComponent implements OnDestroy{
 
     this.userService.register({ username, password }).subscribe({
       next: (response) => {
-        this.userService.notifyUserAuth(true);
         this.authService.setUserData(response);
+        this.userService.notifyUserAuth(true);
         this.error = '';
         this.router.navigate(['/']);
       },
@@ -39,10 +39,10 @@ export class RegisterComponent implements OnDestroy{
         registerForm.reset();
       },
     });
-  };
+  }
 
   ngOnDestroy(): void {
-    if (this.registerSubscription$ !== undefined){
+    if (this.registerSubscription$ !== undefined) {
       this.registerSubscription$.unsubscribe();
     }
   }

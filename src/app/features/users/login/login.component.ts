@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription, catchError, map, of, tap } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -30,8 +30,8 @@ export class LoginComponent implements OnDestroy {
 
     this.loginSubscription$ = this.userService.login(userData).subscribe({
       next: (response) => {
-        this.userService.notifyUserAuth(true);
         this.authService.setUserData(response);
+        this.userService.notifyUserAuth(true);
         this.error = '';
         this.router.navigate(['/']);
       },
@@ -43,7 +43,7 @@ export class LoginComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(this.loginSubscription$ !== undefined){
+    if (this.loginSubscription$ !== undefined) {
       this.loginSubscription$.unsubscribe();
     }
   }

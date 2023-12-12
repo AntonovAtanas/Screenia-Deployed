@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../interfaces/User';
-import { BehaviorSubject, Observable, catchError, map, tap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { CONSTS } from 'src/app/environments/constants';
 import { Movie } from 'src/app/interfaces/Movie';
 import { ENDPOINT } from 'src/app/environments/endpoints';
@@ -16,38 +16,37 @@ export class UserService {
 
   register(userData: User): Observable<User> {
     return this.http.post<User>(`${ENDPOINT.users}/register`, userData);
-  };
+  }
 
   login(userData: User): Observable<User> {
     return this.http.post<User>(`${ENDPOINT.users}/login`, userData);
-  };
+  }
 
-  getUserId(){
-    const userData = localStorage.getItem(CONSTS.localStorageAuth)
-    
+  getUserId() {
+    const userData = localStorage.getItem(CONSTS.localStorageAuth);
+
     if (userData) {
-      return JSON.parse(userData)._id
+      return JSON.parse(userData)._id;
     }
 
-    return false
-  };
+    return false;
+  }
 
-  getUserLikedMovies(userId: string){
+  getUserLikedMovies(userId: string) {
     return this.http.get<Movie[]>(`${ENDPOINT.users}/profile/${userId}`);
-  };
+  }
 
-  getUsername(){
+  getUsername() {
     const storedUser = localStorage.getItem(CONSTS.localStorageAuth);
 
-      if (storedUser) {
-        const parsedUser = JSON.parse(storedUser);
-        const username = parsedUser.username;
-        return username
-      }
-  };
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser);
+      const username = parsedUser.username;
+      return username;
+    }
+  }
 
-  notifyUserAuth(loginStatus: boolean){
+  notifyUserAuth(loginStatus: boolean) {
     this.isUserLogged$$.next(loginStatus);
-  };
-
+  }
 }
